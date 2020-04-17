@@ -12,28 +12,24 @@ import java.util.Date;
  * @author v_lon
  */
 public class Match {
-    Date date;
+
     Team homeTeam;
     Team awayTeam;
     char result;
     int homeTeamGoal;
     int awayTeamGoal;
-    
-    
-    public Match(Date date,Team homeTeam,Team awayTeam,char result,int homeTeamGoal,int awayTeamGoal){
-        this.date=date;
-        this.homeTeam=homeTeam;
-        this.awayTeam=awayTeam;
-        this.result=result;
-        this.homeTeamGoal=homeTeamGoal;
-        this.awayTeamGoal=awayTeamGoal;
-    }
-    public Date getDate() {
-        return date;
+
+    public Match(Team homeTeam, Team awayTeam) {
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
     }
 
-    public void setDate(Date date) {
-        this.date = date;
+    public Match(Team homeTeam, Team awayTeam, char result, int homeTeamGoal, int awayTeamGoal) {
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.result = result;
+        this.homeTeamGoal = homeTeamGoal;
+        this.awayTeamGoal = awayTeamGoal;
     }
 
     public Team getHomeTeam() {
@@ -52,7 +48,6 @@ public class Match {
         this.awayTeam = awayTeam;
     }
 
-
     public int getHomeTeamGoal() {
         return homeTeamGoal;
     }
@@ -68,6 +63,13 @@ public class Match {
     public void setAwayTeamGoal(int awayTeamGoal) {
         this.awayTeamGoal = awayTeamGoal;
     }
-    
-    
+
+    public char getResult() {
+        return result;
+    }
+
+    public void setResult(char result) {
+        this.result = result;
+    }
+
 }

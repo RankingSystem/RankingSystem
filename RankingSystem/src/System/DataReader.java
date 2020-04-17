@@ -13,35 +13,37 @@ import java.io.IOException;
 
 /**
  *
- * @author harshalneelkamal
+ * @author v_lon
  */
 public class DataReader {
-    
+
     private BufferedReader reader;
     private String[] header;
-    
+
     public DataReader(String fileName) throws FileNotFoundException {
         File file = new File(fileName);
-        if(!file.exists())
-            throw new FileNotFoundException("File not found at the path specified: "+fileName);
+        if (!file.exists()) {
+            throw new FileNotFoundException("File not found at the path specified: " + fileName);
+        }
         reader = new BufferedReader(new FileReader(file));
     }
-    
-    public String[] getNextRow() throws IOException{
-        if (header == null)
+
+    public String[] getNextRow() throws IOException {
+        if (header == null) {
             header = getFileHeader();
+        }
         String line = "";
-        if((line = reader.readLine()) != null){
+        if ((line = reader.readLine()) != null) {
             String[] rows = line.split(",");
             return rows;
         }
         return null;
     }
-    
-    public String[] getFileHeader() throws IOException{
-        if(header == null){
+
+    public String[] getFileHeader() throws IOException {
+        if (header == null) {
             String line = "";
-            if((line = reader.readLine()) != null){
+            if ((line = reader.readLine()) != null) {
                 String[] rows = line.split(",");
                 header = rows;
             }

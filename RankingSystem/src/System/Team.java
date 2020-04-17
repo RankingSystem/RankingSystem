@@ -6,7 +6,7 @@ import java.util.ArrayList;
  *
  * @author v_lon
  */
-public class Team {
+public class Team{
 
     String name;
     ArrayList<Match> homeMatchList;
@@ -17,11 +17,16 @@ public class Team {
     int score;
 
     public Team() {
-        this("");
+        this.homeMatchList = new ArrayList<Match>();
+        this.awayMatchList = new ArrayList<Match>();
     }
 
-    public Team(String name) {
+    public Team(String name,int win,int draw,int lose,int score) {
         this.name = name;
+        this.win=win;
+        this.draw=draw;
+        this.lose=lose;
+        this.score=score;
         this.homeMatchList = new ArrayList<Match>();
         this.awayMatchList = new ArrayList<Match>();
     }
@@ -82,8 +87,4 @@ public class Team {
         this.lose = lose;
     }
 
-    @Override
-    public String toString() {
-        return name;
-    }
 }
